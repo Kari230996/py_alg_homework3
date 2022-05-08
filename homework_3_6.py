@@ -13,29 +13,23 @@ for i in range(1, 21):
 
 print(n)
 
+max_index = 0
+min_index = 0
 
-def maxi(arr):
-    max_ = arr[0]
-    for i in arr:
-        if i > max_:
-           max_ = i
-    return max_
-
-def mini(arr):
-    min_ = arr[0]
-    for i in arr:
-        if i < min_:
-            min_ = i
-    return min_
+for i in range(len(n)):
+    if n[i] > n[max_index]:
+        max_index = i
+    elif n[i] < n[min_index]:
+        min_index = i
 
 
-max_index = n.index(maxi(n))
-min_index = n.index(mini(n))
 
-print(f'Максимальное число: {maxi(n)}, минимальное: {mini(n)}')
+print(f'Максимальное число: {n[max_index]}, минимальное: {n[min_index]}')
 
 a = n[min_index+1:max_index]
 b = n[max_index+1:min_index]
+
+
 
 def sumList(arr):
    if len(arr) == 1:

@@ -5,45 +5,29 @@
 '''
 
 import random
-
-def maxi(arr):
-    max_ = arr[0]
-    for i in arr:
-        if i > max_:
-           max_ = i
-    return max_
-
-def mini(arr):
-    min_ = arr[0]
-    for i in arr:
-        if i < min_:
-            min_ = i
-    return min_
+SIZE = 10
 
 n = []
-for i in range(1, 11):
+
+for i in range(SIZE):
     random_ = random.randint(0, 99)
     n.append(random_)
 
-
-result = maxi(n)
-result_ = mini(n)
-
-
-def getIndex(arr):
-    min_ = arr.index(mini(arr))
-    max_ = arr.index(maxi(arr))
-    if min_ > max_:
-        return min_, max_
-    return max_, min_
-
-print(f'Максимальное число: {result}, минимальное: {result_}')
-
 print(n)
 
-n[getIndex(n)[0]], n[getIndex(n)[1]] = n[getIndex(n)[1]], n[getIndex(n)[0]]
+max_ = 0
+min_ = 0
+
+for i in range(len(n)):
+    if n[i] > n[max_]:
+        max_ = i
+    elif n[i] < n[min_]:
+        min_ = i
+
+print(f'Максимальное число: {n[max_]}, минимальное: {n[min_]}')
+
+n[max_], n[min_] = n[min_], n[max_]
 
 print(n)
-
 
 

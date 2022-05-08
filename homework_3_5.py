@@ -6,13 +6,6 @@
 
 import random
 
-def maxi(arr):
-    max_ = arr[0]
-    for i in arr:
-        if i > max_:
-           max_ = i
-    return max_
-
 
 n = []
 for i in range(1, 21):
@@ -27,5 +20,9 @@ for i in n:
     if i < 0:
         new.append(i)
 
-print(new)
-print(f'Максимальное отрицательное число: {maxi(new)}')
+max_ = new[0]
+for i in new:
+    if i > max_:
+        max_ = i
+
+print(f'Максимальное отрицательное число: {max_}')
